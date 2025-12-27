@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - Student Profile System</title>
+    <style>
+        /* GLASSMORPHISM STYLES testing, */
+        /* from github also */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #06b6d4, #6366f1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .header h2 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* nav menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* FORM design? */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .input-wrapper input,
+        .input-wrapper textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .input-wrapper input::placeholder,
+        .input-wrapper textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper textarea:focus {
+            border-color: #06b6d4;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.2);
+        }
+
+        /* submit butt */
+        .btn {
+            background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+        }
+
+       
+        @media (max-width: 480px) {
+            .glass-card {
+                padding: 24px;
+            }
+            
+            .header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+            
+            
+            <!-- HEADER -->
+            <div class="header">
+                <h2>Create Student Profiles</h2>
+                <p>Enter your personal information below?</p>
+            </div>
+            
+            
+            
+            
+            <!-- FORM -->
+            <form action="TheSecServlet" method="post">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" name="studentId" placeholder="Student ID" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" name="program" placeholder="Program (e.g., Computer Science)" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" name="hobbies" placeholder="Hobbies (example., Reading, Gaming, Sports)" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <textarea name="introduction" placeholder="Add more info here" required></textarea>
+                    </div>
+                </div>
+                
+                 <button type="submit" class="btn">Save YOUR Profile to Database</button>
+            </form>
+            
+            <!-- NAV -->
+            <div class="nav-menu">
+                <a href="TheSecServlet?action=view">View All Profiles</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
